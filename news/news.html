@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Trang Tin Tức Âm Nhạc</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link href="../css/mont.css" rel="stylesheet" type="text/css">
+  <link href="../css/lato.css" rel="stylesheet" type="text/css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+
+  h2 {
+      font-size: 25px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      color: #22ABC6;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+      font-family: Montserrat, sans-serif;
+      text-align: justify;
+    }
+  .col-sm-4 h4{
+      text-align: center;
+  }
+  .col-sm-8 p{
+      text-align: right;
+      font-style: italic;
+      font-weight: 80;
+      color: #22ABC6;
+  }
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+      padding-top: 90px;
+  }
+  .image1{
+    height: 350px;
+    display: block;
+    background-image: url("image1.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    }
+    .image2{
+      height: 200px;
+    display: block;
+    background-image: url("image2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .image3{
+    height: 200px;
+    display: block;
+    background-image: url("image3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .image4{
+    height: 200px;
+    display: block;
+    background-image: url("image4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .image5{
+    height: 200px;
+    display: block;
+    background-image: url("image5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .image6{
+    height: 200px;
+    display: block;
+    background-image: url("image6.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .image7{
+    height: 200px;
+    display: block;
+    background-image: url("image7.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  
+  footer{
+    padding-top:40px;
+    margin-top:40px;
+    border-top:1px solid #dedede;
+    background:rgba(50,50,50, 0.05);
+    padding-bottom:30px;
+    
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+  .col-sm-4{
+    padding-left: 0px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      
+      text-align: center;
+      margin: 25px 0;
+      }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nội dung"></div>
+          <button type="submit" class="btn btn-default">Tìm kiếm</button>
+        </form>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="../index.html">Trang Chủ</a>
+          </li>
+          <li  class="active">
+            <a  href="#about">Tin Tức</a>
+          </li>
+          <li>
+            <a href="#contact">Liên Hệ</a>
+          </li>
+          <li>
+          </ul>
+          <div class="nav navbar-nav navbar-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cá nhân
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Playlist của tôi</a>
+                </li>
+                <li>
+                  <a href="upload/upload.html">Upload nhạc mới</a>
+                </li>
+                <li>
+                  <a href="#">Thay đổi thông tin</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">Đăng xuất</a>
+                </li>
+              </ul>
+            </div>
+            <a class="btn btn-success btn-sm navbar-btn" href="#">Đăng nhập</a>
+            <a class="btn btn-primary btn-sm navbar-btn" href="#">Đăng ký</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Container (About Section) -->
+<div class="container">
+<div class="row">
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="image1"></div>
+    </div>
+    <div class="col-sm-8">
+      <h2>MC Anh Tuấn dẫn đầu đoàn biker tiễn đưa Trần Lập</h2>
+      <p>Update: Saturday 13h20</p>
+      <h4>Cuộc diễu hành trong đám tang Trần Lập được MC Anh Tuấn kêu gọi như một hành động mà anh và những người chơi xe thực hiện để tưởng niệm rocker quá cố. Được sự đồng ý của gia đình Trần Lập, sáng 23/3, đoàn biker với trang phục nghiêm trang đã cùng đưa Trần Lập từ nhà tang lễ về qua nhà lần cuối trước khi tới Công viên Nghĩa trang Thiên Đức (Phú Thọ). </h4>
+      <h4>Đoàn biker tiễn đưa Trần Lập gồm thành viên của nhiều câu lạc bộ. Những chuyến đi dài - sáng tác của Trần Lập tặng các biker được mở suốt quãng đường.Không chỉ là một rocker, nhạc sĩ với những tác phẩm đi cùng những thế hệ người yêu rock Việt, Trần Lập còn được biết đến là một biker, phượt thủ với không ít chuyến đi rong ruổi khắp đất nước.</h4>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Container (Services Section) -->
+
+<div id="services" class="container-fluid text-center">
+  <h2>Tin tức khác</h2>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="image2"></span>
+      <h4> <a href="http://www.w3schools.com">Cậu bé hỏng mắt thi Got Talent từng tuyệt vọng</a></h4>
+    </div>
+    <div class="col-sm-4">
+      <span class="image3"></span>
+      <h4><a href="http://www.w3schools.com">Dù bận rộn, Công Vinh vẫn kịp tới chúc mừng Thủy Tiên vào phút chót</a></h4>
+    </div>
+    <div class="col-sm-4">
+      <span class="image4"></span>
+      <h4><a href="http://www.w3schools.com">Thủy Tiên "đá" Bình Minh để chạy theo "đại gia" Công Vinh</a></h4>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="image5"></span>
+      <h4><a href="http://www.w3schools.com">Trường Giang thừa nhận có sự cạnh tranh với Trấn Thành
+</a></h4>
+    </div>
+    <div class="col-sm-4">
+      <span class="image6"></span>
+      <h4><a href="http://www.w3schools.com">Hậu duệ của mặt trời: Công cụ tuyệt vời để tuyển lính!</a></h4>
+    </div>
+    <div class="col-sm-4">
+      <span class="image7"></span>
+      <h4><a href="http://www.w3schools.com">Sự thật về nhan sắc cô gái nhảy cùng Noo Phước Thịnh</a></h4>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+
+<!-- Container (Pricing Section) -->
+
+<!-- Container (Contact Section) -->
+<!-- Add Google Maps -->
+
+
+</div>
+<!-- FOOTER-->
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-lg-3">
+            <h4 class="line3 center standart-h4title">
+              <span>Thành viên</span>
+            </h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#">Phạm Quang Hải</a>
+              </li>
+              <li>
+                <a href="#">Nguyễn Dương Hạnh</a>
+              </li>
+              <li>
+                <a href="#">Nguyễn Văn Dương</a>
+              </li>
+              <li>
+                <a href="#">Nguyễn Đức Thái</a>
+              </li>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-xs-6 col-sm-6 col-lg-3">
+            <h4 class="line3 center standart-h4title">
+              <span>Thông tin liên hệ:</span>
+            </h4>
+            <address> <strong>Đại học Bách Khoa TP.HCM</strong>
+              <br> <i class="icon-map-marker"></i>
+              268 Lý Thường Kiệt
+              <br>
+              Quận 10 TP.HCM
+              <br> <i class="icon-phone-sign"></i>
+              + 4 (123) 456-7890
+            </address>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- CONTAINER FOOTER--> </footer>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>

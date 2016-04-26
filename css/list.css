@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+audio {
+  position: absolute;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: grey;
+}
+.panel-body a :link{
+  text-decoration: none;
+}
+
+.panel-body a:active,a:hover {
+  color: #B35ADB;
+  text-decoration: none;
+}
+.media-left a img {
+  width: 100%;
+}
+.media-left {
+  width: 60%;
+}
+.col-md-5 .media-body {
+  text-align: center;
+  padding-top: 10%;
+}
+.audio-player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all 0.2s;
+  background: #EEE;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 560px) {
+  .audio-player {
+    width: 100vw;
+    background: white;
+  }
+  * {
+    font-size: 10px;
+  }
+}
+
+.info {
+  flex: 1;
+  padding: 16px 30px;
+}
+
+.cover-art {
+  bottom: 160px;
+  right: -30px;
+  width: 230px;
+  height: 230px;
+  background: url("../images/ERIKST.jpg");
+  background-size: cover;
+  transition: all 0.2s;
+}
+@media screen and (max-width: 560px) {
+  .cover-art {
+    position: relative;
+    width: 100%;
+    height: 80vw;
+    bottom: inherit;
+    right: inherit;
+  }
+}
+@media screen and (max-width: 520px) {
+  .cover-art {
+    position: relative;
+    width: 100%;
+    height: 90vw;
+    bottom: inherit;
+    right: inherit;
+  }
+}
+@media screen and (max-height: 500px) {
+  .cover-art {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+}
+.cover-art a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cover-art a:hover {
+  background: #22a952;
+  opacity: 0.2;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: #DFF0D8;
+  margin-top: -1px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+.controls_plays {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+.controls_player {
+  flex: 1;
+  fill: #7FE5A3;
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 420px) {
+  .controls {
+    flex-direction: column;
+    height: 200px;
+  }
+}
+
+#plays_btn, #prev_btn, #next_btn {
+  cursor: pointer;
+  width: 26px;
+  max-width: 18px;
+  transition: all 0.2s;
+}
+#plays_btn:hover, #prev_btn:hover, #next_btn:hover {
+  fill: #565349;
+}
+
+#pause_btn {
+  display: none;
+}
+
+#volume_btn, #shuffle_btn, #playlist_btn {
+  cursor: pointer;
+  width: 23px;
+  max-width: 18px;
+  transition: all 0.2s;
+}
+#volume_btn:hover, #shuffle_btn:hover, #playlist_btn:hover {
+  fill: #22a952;
+}
+
+.progressbar_slide {
+  width: 100%;
+  background: #7fe5a3;
+  height: 6px;
+}
+
+.progressbar_range {
+  width: 0;
+  background: black;
+  height: 6px;
+}
+footer{
+    padding-top:40px;
+    margin-top:40px;
+    border-top:1px solid #dedede;
+    background:rgba(50,50,50, 0.05);
+    padding-bottom:30px;
+    
+  }
