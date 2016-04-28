@@ -1,0 +1,237 @@
+
+.track-list {
+  position: relative;
+  
+  min-height: 800px;
+  width:100%;
+  max-width: 671px;
+  background: #90425c;
+  border-bottom: 1px solid #E6E9ED;
+  margin-right:20px;
+}
+.track-list-header {
+  background-image: url("images/14.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+
+.track-list-header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.36);
+}
+
+.header-background {
+  position: absolute;
+  z-index: 1;
+  top: -135px;
+  
+  width: 690px;
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
+}
+
+.header-cover {
+  position: absolute;
+  width: 238px;
+  height: 112px;
+  left: 50%;
+  margin-left: -120px;
+  z-index: 4;
+  bottom: 0px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.33);
+}
+
+.header-cover.left,
+.header-cover.right {
+  left: 20px;
+  margin-left: 0;
+  width: 238px;
+  height: 112px;
+  background-size: 90px;
+  z-index: 3;
+  top: 40px;
+}
+
+.header-cover.right {
+  left: initial;
+  right: 20px;
+  top: 40px;
+}
+
+.track-list h3 {
+  font-family: 'SourceSansProSemiBold', 'Calibri', 'Arial', sans-serif;
+  display: block;
+  padding: 4px;
+  margin: 0;
+  color: white;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid black;
+}
+
+.track-list h3:before,
+.track-list h3:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+.track-list h3:before {
+  top: 14px;
+  left: 21px;
+  width: 242px;
+  height: 1px;
+  
+}
+
+.track-list h3:after {
+  top: 14px;
+  right: 21px;
+  width: 242px;
+  height: 1px;
+  
+}
+
+.row {
+  display: table;
+  width: 100%;
+}
+
+ul.discover-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  padding: 5px 20px 20px 20px;
+}
+
+ul.discover-list li {
+  width: 100%;
+}
+
+ul.discover-list li a {
+  display: table;
+  padding: 15px 0px 15px 0px;
+  font-family: 'SourceSansProSemiBold', 'Calibri', 'Arial', sans-serif;
+  text-transform: uppercase;
+  /*border-bottom: 1px solid #2e353a;*/
+  position: relative;
+  width: 100%;
+}
+
+ul.discover-list li a:after {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  right: 0px;
+  width: 100%;
+  height: 1px;
+  /*border-bottom: 1px solid black;*/
+}
+
+ul.discover-list li a:hover span.artist,
+ul.discover-list li a:hover span.title{
+  color:#fdc689;
+ -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+span.play-btn:hover i.fa-play{
+    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+.sect-one {
+  display: block;
+  color: white;
+  width: 60%;
+  padding: 0px 0px;
+  float: left;
+}
+
+.sect-two {
+  display: block;
+  float: right;
+  color: white;
+  width: 30%;
+}
+
+span.play-btn {
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 19px;
+  background-size: cover;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-top: 1px;
+  transition: all .2s ease-in-out;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+
+span.artist,
+span.title {
+  width: 100%;
+  float: left;
+  text-align: left;
+}
+
+span.date,
+span.genre {
+  width: 100%;
+  float: right;
+  text-align: right;
+}
+
+span.artist {
+  font-size: 1.5em;
+  font-weight: 450;
+  line-height: 20px;
+}
+
+span.title {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 20px;
+  color: #a1a1a1;
+}
+
+span.date {
+  color: #fdc689;
+}
+
+span.genre {
+  color: #7accc8;
+}
+
+.remixes h3:before{
+      width: 237px;
+}
+
+.remixes h3:after{
+      width: 237px;
+}
+
+.pagination{
+  color: #000000;
+}
