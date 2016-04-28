@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
   <footer><a target="blank" href="index.html">Go to my music</a></footer>
 </div>
-<script src="../jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 </body>
 

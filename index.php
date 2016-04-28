@@ -1,4 +1,5 @@
 <?php
+  header("Content-Type: text/html;charset=UTF-8");
   session_start();
   if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     if (isset($_POST['un-session']))
@@ -6,6 +7,7 @@
         session_unset("name");
     }
   }
+  include('dbcon.php');
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +55,7 @@
           </li>
           <li></ul>
           <div class="nav navbar-nav navbar-right">
-            <div class="btn-group">
+            <div class="dropdown">
               
                 <?php
                   if (isset($_SESSION['name']))
@@ -78,12 +80,19 @@
                   <a href="logout.php">Đăng xuất</a>
                 </li>
               </ul>
+              <?
+              if ($_SESSION['name']=='haipham'){
+                              echo '<a class="btn btn-success btn-sm navbar-btn" href="admin.php">Quản trị</a> ';
+                            }
+              ?>
             </div>
+
             <?php
+                  
                   if (!isset($_SESSION['name']))
                         {
                         echo '<a class="btn btn-success btn-sm navbar-btn" href="login/login.php">Đăng nhập</a> ';
-                        echo '<a class="btn btn-primary btn-sm navbar-btn" href="register/register.html">Đăng ký</a>';
+                        echo '<a class="btn btn-primary btn-sm navbar-btn" href="register/register.php">Đăng ký</a>';
                       }
             ?>
           </div>
@@ -159,93 +168,28 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="video.html" class="thumbnail">
-                      <img src="images/mv1.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="video.html">See you again</a>
-                    </div>
-                  </div>
-                </div>
+                <?
+                    mysql_query("set names 'utf8'");
+                    $sql="select * from video";
+                    $result=mysql_query($sql);
+                    $videonum=1;
+                      while ($row = mysql_fetch_array($result)){
+                      if ($videonum==5) break;
+                      $songname=$row['name'];
+                      $songsinger=$row['artist'];
+                      $link=$row['link'];
+                      $link2=split("/", $link);
+                      echo '<div class="col-xs-6 col-md-3">';
+                      echo '<div class="panel panel-default">';
+                      echo '<a href="video.php?video='.$link2[1].'&name='.$songname.'&artist='.$songsinger.'" class="thumbnail">';
+                      echo '<img src="'.$row['link'].'.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />';
+                      echo '</a>';
+                      echo '<div class="panel-footer">';
+                      echo '<a href="video.html">'.$songname.'</a>';
+                      echo ' </div>  </div>  </div>';
 
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv2.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Twerk It Like Miley</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv3.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Fancy</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv4.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Timber</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv5.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Me, Myself & I</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv6.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">See You Again</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv7.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Energy Freestyle</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                  <div class="panel panel-default">
-                    <a href="#" class="thumbnail">
-                      <img src="images/mv8.jpg" alt="..." onmouseover="hover(this);" onmouseout="unhover(this);" />
-                    </a>
-                    <div class="panel-footer">
-                      <a href="#">Apologize</a>
-                    </div>
-                  </div>
-                </div>
-
+                      $videonum = $videonums+1;}
+                ?>
               </div>
             </div>
           </div>
@@ -270,11 +214,22 @@
               </li>
             </ul>
             <ul class="list-group">
-            <li class="list-group-item"><a href="Music.html" >1. Found Love In a Graveyard - Veronica Falls</a></li>
-            <li class="list-group-item"><a href="#">2. Nếu Em Còn Tồn Tại - Trịnh Đình Quang</a></li>
-            <li class="list-group-item"><a href="#">3. Tâm Sự Với Người Lạ - Tiên Cookie</a></li>
-            <li class="list-group-item"><a href="#">4. Khi Người Mình Yêu Khóc - Phan Mạnh Quỳnh</a></li>
-            <li class="list-group-item"><a href="#">5. Tình Yêu Chắp Vá - Mr. Siro</a></li>
+              <?
+                  mysql_query("set names 'utf8'");
+                  $sql="select * from music";
+                  $result=mysql_query($sql);
+                  $songnum=1;
+                    while ($row = mysql_fetch_array($result)){
+                    if ($songnum==9) break;
+                    $songname=$row['music_name'];
+                    $songsinger=$row['music_singer'];
+                    $music_link=$row['music_link'];
+              
+                    echo '<li class="list-group-item"><a href="Music.php?music_link='.$music_link.'&music_name='.$songname.'&music_singer='.$songsinger.'">'.$songnum.'. '.$songname.' - '.$songsinger.'</a></li>';
+                   
+
+                    $songnum = $songnum+1;}
+              ?>
             </ul>
           </div>
         </div>
