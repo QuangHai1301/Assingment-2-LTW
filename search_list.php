@@ -87,10 +87,10 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
       </div>
       <div class="collapse navbar-collapse">
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="search_list.php" method="get">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nội dung"></div>
-          <button type="submit" class="btn btn-default">Tìm kiếm</button>
+            <input type="text" name ="search" class="form-control" placeholder="Nội dung"></div>
+          <button type="submit" name="ok" class="btn btn-default">Tìm kiếm</button>
         </form>
         <ul class="nav navbar-nav">
           <li class="active">
@@ -175,8 +175,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
         echo   '</span>
           </div>
           <div class="sect-two">
-            <span class="date">26/12/2015</span>
-            <span class="genre">Nhạc trẻ</span>
+            <span class="date">'.rand(1,30).'/'.rand(1,12).'/'.rand(2000,2015).'</span>
+            <span class="genre">'.rand().' lượt nghe'.'</span>
           </div>
         </a>
         
